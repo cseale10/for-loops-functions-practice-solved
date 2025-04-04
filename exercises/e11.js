@@ -7,6 +7,20 @@
 export function getAllWithdrawals(array) {
   // Your code goes here...
 
+  const withdrawalSum = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let sum = 0;
+    let bankWithdrawals = array[i].withdrawals;
+
+    if (bankWithdrawals) {
+      for (let i = 0; i < bankWithdrawals.length; i++) {
+        sum += bankWithdrawals[i];
+      }
+    }
+    withdrawalSum.push(sum);
+  }
+  return withdrawalSum;
 }
 
 // === TEST YOURSELF ===
